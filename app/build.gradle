@@ -7,6 +7,10 @@ repositories {
   mavenCentral()
 }
 
+tasks.withType(JavaCompile) {
+  it.options.compilerArgs += '--enable-preview'
+}
+
 dependencies {
   implementation platform('org.jetbrains.kotlin:kotlin-bom')
 

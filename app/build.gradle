@@ -1,18 +1,17 @@
 plugins {
-  // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
-  id 'org.jetbrains.kotlin.jvm' version '1.4.20'
+  id 'application'
 }
 
 repositories {
   mavenCentral()
 }
 
+application {
+  mainClassName = 'adventofcode2020.Day8'
+  applicationDefaultJvmArgs = ['--enable-preview']
+}
+
 tasks.withType(JavaCompile) {
   it.options.compilerArgs += '--enable-preview'
 }
 
-dependencies {
-  implementation platform('org.jetbrains.kotlin:kotlin-bom')
-
-  implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
-}
